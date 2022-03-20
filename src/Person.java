@@ -3,7 +3,19 @@ abstract public class Person {
     private String last_name;
     private int age;
 
-    private void setFirst_name(String first_name) {
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setFirst_name(String first_name) {
         if(first_name.length()>0){
             this.first_name = first_name;
         } else {
@@ -11,7 +23,7 @@ abstract public class Person {
         }
     }
 
-    private void setLast_name(String last_name) {
+    public void setLast_name(String last_name) {
         if(last_name.length()>0){
             this.last_name = last_name;
         } else {
@@ -19,7 +31,7 @@ abstract public class Person {
         }
     }
 
-    private void setAge(int age) {
+    public void setAge(int age) {
         if(age>0){
             this.age = age;
         } else {
@@ -27,9 +39,20 @@ abstract public class Person {
         }
     }
 
+    public Person(){
+    }
+
     public Person(String first_name, String last_name, int age) {
-        this.setFirst_name(first_name);
-        this.setLast_name(last_name);
-        this.setAge(age);
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person =" +
+                "first_name ='" + first_name + '\'' +
+                ", last_name ='" + last_name + '\'' +
+                ", age =" + age;
     }
 }

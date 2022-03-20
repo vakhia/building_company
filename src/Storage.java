@@ -3,7 +3,11 @@ import java.util.List;
 public class Storage extends Building {
     private List<Material> Materials;
 
-     public void setMaterials(Material material) {
+    public void setMaterials(List<Material> materials) {
+        Materials = materials;
+    }
+
+    public void setMaterials(Material material) {
         if (Volume() > material.quantity) {
             this.Materials.add(material);
         } else {
@@ -15,8 +19,12 @@ public class Storage extends Building {
         return Materials;
     }
 
-    public Storage(int width, int length, int height, int price) {
-        super(width, length, height, price);
+    public Storage(int width, int length, int price, int height, String type) {
+        super(width, length, price, height, type);
     }
 
+    public Storage(int width, int length, int price, int height, String type, List<Material> materials) {
+        super(width, length, price, height, type);
+        Materials = materials;
+    }
 }

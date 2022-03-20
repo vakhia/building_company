@@ -1,13 +1,26 @@
-public class Contractor extends Person{
+public class Contractor extends Employee {
     private boolean seal_stamp;
+
+    public void setSeal_stamp(boolean seal_stamp) {
+        this.seal_stamp = seal_stamp;
+    }
 
     public boolean isSeal_stamp() {
         return seal_stamp;
     }
 
-    public Contractor(String first_name, String last_name, int age, boolean seal_stamp) {
-        super(first_name, last_name, age);
+    public Contractor(String first_name, String last_name, int age, int price) {
+        super(first_name, last_name, age, price);
+    }
+
+    public Contractor(String first_name, String last_name, int age, int price, boolean seal_stamp) {
+        super(first_name, last_name, age, price);
         this.seal_stamp = seal_stamp;
     }
 
+    @Override
+    public String toString() {
+        return "Contractor = " +
+                "seal_stamp=" + seal_stamp;
+    }
 }

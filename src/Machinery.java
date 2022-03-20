@@ -8,7 +8,24 @@ abstract public class Machinery {
     private int fuel_capacity;
     private Date date_of_creating;
 
-    private void setTitle(String title) {
+    public String getTitle() {
+        return title;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public int getFuel_capacity() {
+        return fuel_capacity;
+    }
+
+    public Date getDate_of_creating() {
+        return date_of_creating;
+    }
+
+
+    public void setTitle(String title) {
         if (title.length() > 0) {
             this.title = title;
         } else {
@@ -16,7 +33,7 @@ abstract public class Machinery {
         }
     }
 
-    private void setPower(int power) {
+    public void setPower(int power) {
         if (power > 0) {
             this.power = power;
         } else {
@@ -24,7 +41,7 @@ abstract public class Machinery {
         }
     }
 
-    private void setFuel_capacity(int fuel_capacity) {
+    public void setFuel_capacity(int fuel_capacity) {
         if (fuel_capacity > 0) {
             this.fuel_capacity = fuel_capacity;
         } else {
@@ -32,7 +49,7 @@ abstract public class Machinery {
         }
     }
 
-    private void setDate_of_creating(Date date_of_creating) {
+    public void setDate_of_creating(Date date_of_creating) {
         if (date_of_creating != null) {
             this.date_of_creating = date_of_creating;
         } else {
@@ -40,10 +57,23 @@ abstract public class Machinery {
         }
     }
 
+    public Machinery(){
+
+    }
+
     public Machinery(String title, int power, int fuel_capacity, Date date_of_creating) {
-        this.setTitle(title);
-        this.setPower(power);
-        this.setFuel_capacity(fuel_capacity);
-        this.setDate_of_creating(date_of_creating);
+        this.title = title;
+        this.power = power;
+        this.fuel_capacity = fuel_capacity;
+        this.date_of_creating = date_of_creating;
+    }
+
+    @Override
+    public String toString() {
+        return "Machinery = " +
+                "title ='" + title + '\'' +
+                ", power =" + power +
+                ", fuel_capacity =" + fuel_capacity +
+                ", date_of_creating =" + date_of_creating;
     }
 }

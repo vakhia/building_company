@@ -3,7 +3,19 @@ public class Blueprint {
     private int lengthOfBuilding;
     private int heightOfBuilding;
 
-    private void setWidthOfBuilding(int widthOfBuilding) {
+    public int getWidthOfBuilding() {
+        return widthOfBuilding;
+    }
+
+    public int getLengthOfBuilding() {
+        return lengthOfBuilding;
+    }
+
+    public int getHeightOfBuilding() {
+        return heightOfBuilding;
+    }
+
+    public void setWidthOfBuilding(int widthOfBuilding) {
         if (widthOfBuilding > 0) {
             this.widthOfBuilding = widthOfBuilding;
         } else {
@@ -11,7 +23,7 @@ public class Blueprint {
         }
     }
 
-    private void setLengthOfBuilding(int lengthOfBuilding) {
+    public void setLengthOfBuilding(int lengthOfBuilding) {
         if (lengthOfBuilding > 0) {
             this.lengthOfBuilding = lengthOfBuilding;
         } else {
@@ -19,7 +31,7 @@ public class Blueprint {
         }
     }
 
-    private void setHeightOfBuilding(int heightOfBuilding) {
+    public void setHeightOfBuilding(int heightOfBuilding) {
         if (heightOfBuilding > 0) {
             this.heightOfBuilding = heightOfBuilding;
         } else {
@@ -27,14 +39,26 @@ public class Blueprint {
         }
     }
 
+    public Blueprint(){
+
+    }
+
+
     public Blueprint(int widthOfBuilding, int lengthOfBuilding, int heightOfBuilding) {
-        this.setHeightOfBuilding(heightOfBuilding);
-        this.setLengthOfBuilding(lengthOfBuilding);
-        this.setWidthOfBuilding(widthOfBuilding);
+        this.widthOfBuilding = widthOfBuilding;
+        this.lengthOfBuilding = lengthOfBuilding;
+        this.heightOfBuilding = heightOfBuilding;
     }
 
     public double Volume(){
         return (this.widthOfBuilding*this.heightOfBuilding*this.lengthOfBuilding);
     }
 
+    @Override
+    public String toString() {
+        return "Blueprint = " +
+                "width of building =" + widthOfBuilding +
+                ", length of building =" + lengthOfBuilding +
+                ", height of building =" + heightOfBuilding;
+                }
 }

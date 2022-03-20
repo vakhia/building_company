@@ -3,7 +3,19 @@ abstract public class Area {
     protected int length;
     protected int price;
 
-    private void setWidth(int width) {
+    public int getWidth() {
+        return width;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setWidth(int width) {
         if(width>0){
             this.width = width;
         } else {
@@ -11,7 +23,7 @@ abstract public class Area {
         }
     }
 
-    private void setLength(int length) {
+    public void setLength(int length) {
        if(length>0){
            this.length = length;
        } else {
@@ -19,7 +31,7 @@ abstract public class Area {
        }
     }
 
-    private void setPrice(int price) {
+    public void setPrice(int price) {
         if(price>0){
             this.price = price;
         } else {
@@ -27,9 +39,24 @@ abstract public class Area {
         }
     }
 
-    public Area(int width, int length, int price) {
-        this.setLength(length);
-        this.setPrice(price);
-        this.setWidth(width);
+    public Area() {
+
     }
+
+    public Area(int width, int length, int price) {
+        this.width = width;
+        this.length = length;
+        this.price = price;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Area = " +
+                "width=" + width +
+                ", length=" + length +
+                ", price=" + price;
+    }
+
 }

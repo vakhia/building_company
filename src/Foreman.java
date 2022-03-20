@@ -1,7 +1,7 @@
-public class Foreman extends Person{
+public class Foreman extends Employee{
     private int numberOfTeam;
 
-    private void setNumberOfTeam(int numberOfTeam) {
+    public void setNumberOfTeam(int numberOfTeam) {
         if(numberOfTeam>0){
             this.numberOfTeam = numberOfTeam;
         } else {
@@ -9,8 +9,22 @@ public class Foreman extends Person{
         }
     }
 
-    public Foreman(String first_name, String last_name, int age, int numberOfTeam) {
-        super(first_name, last_name, age);
-        this.setNumberOfTeam(numberOfTeam);
+    public int getNumberOfTeam() {
+        return numberOfTeam;
+    }
+
+    public Foreman(String first_name, String last_name, int age, int salary) {
+        super(first_name, last_name, age, salary);
+    }
+
+    public Foreman(String first_name, String last_name, int age, int salary, int numberOfTeam) {
+        super(first_name, last_name, age, salary);
+        this.numberOfTeam = numberOfTeam;
+    }
+
+    @Override
+    public String toString() {
+        return "Foreman = " +
+                "numberOfTeam=" + numberOfTeam;
     }
 }

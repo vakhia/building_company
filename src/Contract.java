@@ -5,7 +5,27 @@ public class Contract {
     private int height;
     private int length;
 
-    private void setContractor(Contractor contractor) {
+    public Contractor getContractor() {
+        return contractor;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setContractor(Contractor contractor) {
         if(contractor.isSeal_stamp()){
             this.contractor = contractor;
         } else {
@@ -13,7 +33,7 @@ public class Contract {
         }
     }
 
-    private void setClient(Client client) {
+    public void setClient(Client client) {
         if(client.getMoneyForBuilding()>0){
             this.client = client;
         } else {
@@ -21,7 +41,7 @@ public class Contract {
         }
     }
 
-    private void setWidth(int width) {
+    public void setWidth(int width) {
         if(width>0){
             this.width = width;
         } else {
@@ -29,7 +49,7 @@ public class Contract {
         }
     }
 
-    private void setHeight(int height) {
+    public void setHeight(int height) {
        if(height>0){
            this.height = height;
        } else {
@@ -37,7 +57,7 @@ public class Contract {
        }
     }
 
-    private void setLength(int length) {
+    public void setLength(int length) {
         if(length>0){
             this.length = length;
         } else {
@@ -45,12 +65,25 @@ public class Contract {
         }
     }
 
-    public Contract(Contractor contractor, Client client, int width, int height, int length) {
-        this.setContractor(contractor);
-        this.setClient(client);
-        this.setHeight(height);
-        this.setLength(length);
-        this.setWidth(width);
+    public Contract(){
+
     }
 
+    public Contract(Contractor contractor, Client client, int width, int height, int length) {
+        this.contractor = contractor;
+        this.client = client;
+        this.width = width;
+        this.height = height;
+        this.length = length;
+    }
+
+    @Override
+    public String toString() {
+        return "Contract =" +
+                "contractor =" + contractor +
+                ", client =" + client +
+                ", width =" + width +
+                ", height =" + height +
+                ", length =" + length;
+    }
 }
