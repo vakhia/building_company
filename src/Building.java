@@ -37,7 +37,7 @@ public class Building extends Area {
 
     @Override
     public String toString() {
-        return "Building =" +
+        return "Building = " +
                 "width =" + width +
                 ", length =" + length +
                 ", price =" + price +
