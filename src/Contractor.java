@@ -1,4 +1,4 @@
-public class Contractor extends Employee {
+public final class Contractor extends Employee {
     private boolean seal_stamp;
 
     public void setSeal_stamp(boolean seal_stamp) {
@@ -9,8 +9,7 @@ public class Contractor extends Employee {
         return seal_stamp;
     }
 
-    public Contractor(String first_name, String last_name, int age, int price) {
-        super(first_name, last_name, age, price);
+    public Contractor() {
     }
 
     public Contractor(String first_name, String last_name, int age, int price, boolean seal_stamp) {

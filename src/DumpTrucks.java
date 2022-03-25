@@ -1,6 +1,6 @@
 import java.util.Date;
 import java.util.List;
-public class Dump_Trucks extends Machinery{
+public final class DumpTrucks extends Machinery{
     private List<Material> materials;
 
     public List<Material> getMaterials() {
@@ -11,11 +11,10 @@ public class Dump_Trucks extends Machinery{
         this.materials.add(material);
     }
 
-    public Dump_Trucks(String title, int power, int fuel_capacity, Date date_of_creating){
-        super(title, power, fuel_capacity, date_of_creating);
+    public DumpTrucks(){
     }
 
-    public Dump_Trucks(String title, int power, int fuel_capacity, Date date_of_creating,Material material) {
+    public DumpTrucks(String title, int power, int fuel_capacity, Date date_of_creating, Material material) {
         super(title, power, fuel_capacity, date_of_creating);
         this.materials.add(material);
     }

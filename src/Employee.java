@@ -1,4 +1,6 @@
-public class Employee extends Person{
+import Interfaces.IEmployee;
+
+public class Employee extends Person implements IEmployee {
     private int salary;
 
     public int getSalary() {
@@ -13,9 +15,8 @@ public class Employee extends Person{
         }
     }
 
-    public Employee(int salary) {
 
-    }
+    public Employee() {}
 
     public Employee(String first_name, String last_name, int age, int salary) {
         super(first_name, last_name, age);
@@ -26,5 +27,9 @@ public class Employee extends Person{
     public String toString() {
         return "Employee = " +
                 "salary=" + salary;
+    }
+
+    public void Work() {
+        //:TODO Realise Work method;
     }
 }

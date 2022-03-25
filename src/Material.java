@@ -1,4 +1,4 @@
-public class Material {
+public final class Material {
     protected int quantity;
     protected int pricePerEach;
     protected String type;

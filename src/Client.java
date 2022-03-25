@@ -1,4 +1,6 @@
-public class Client extends Person{
+import Interfaces.IClient;
+
+public final class Client extends Person implements IClient {
     private int moneyForBuilding;
 
     public void setMoneyForBuilding(int moneyForBuilding) {
@@ -12,8 +14,9 @@ public class Client extends Person{
     public int getMoneyForBuilding() {
         return moneyForBuilding;
     }
-    public Client(String first_name, String last_name, int age){
-        super(first_name, last_name, age);
+
+    public Client(){
+
     }
 
     public Client(String first_name, String last_name, int age, int moneyForBuilding) {
@@ -25,5 +28,10 @@ public class Client extends Person{
     public String toString() {
         return "Client = " +
                 "moneyForBuilding=" + moneyForBuilding;
+    }
+
+    @Override
+    public void Pay() {
+
     }
 }

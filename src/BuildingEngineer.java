@@ -1,4 +1,6 @@
-public class Building_Engineer extends Employee {
+import Interfaces.IBuildingEngineer;
+
+public final class BuildingEngineer extends Employee implements IBuildingEngineer {
     private Blueprint blueprint;
     private Building building;
 
@@ -10,11 +12,11 @@ public class Building_Engineer extends Employee {
         return building;
     }
 
-    public Building_Engineer(String first_name, String last_name, int age, int price) {
-        super(first_name, last_name, age, price);
+    public BuildingEngineer() {
+
     }
 
-    public Building_Engineer(String first_name, String last_name, int age, int price, Blueprint blueprint, Building building) {
+    public BuildingEngineer(String first_name, String last_name, int age, int price, Blueprint blueprint, Building building) {
         super(first_name, last_name, age, price);
         this.blueprint = blueprint;
         this.building = building;

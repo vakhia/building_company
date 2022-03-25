@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
-abstract public class Machinery {
+public abstract class Machinery {
     private String title;
     private int power;
     private int fuel_capacity;
@@ -58,7 +58,6 @@ abstract public class Machinery {
     }
 
     public Machinery(){
-
     }
 
     public Machinery(String title, int power, int fuel_capacity, Date date_of_creating) {

@@ -1,11 +1,11 @@
-public class Builder extends Person{
+public final class Builder extends Employee{
     private int work_experience;
 
-    public int getWork_experience() {
+    public int getWorkExperience() {
         return work_experience;
     }
 
-    public void setWork_experience(int work_experience) {
+    public void setWorkExperience(int work_experience) {
         if(work_experience>(-1)){
             this.work_experience = work_experience;
         } else {
@@ -13,12 +13,11 @@ public class Builder extends Person{
         }
     }
 
-    public Builder(String first_name,String last_name,int age){
-        super(first_name, last_name, age);
-    }
 
-    public Builder(String first_name, String last_name, int age, int work_experience) {
-        super(first_name, last_name, age);
+    public Builder() {}
+
+    public Builder(String first_name, String last_name, int age, int salary, int work_experience) {
+        super(first_name, last_name, age, salary);
         this.work_experience = work_experience;
     }
 

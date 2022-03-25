@@ -1,4 +1,6 @@
-public class Supplier extends Person {
+import Interfaces.ISupplier;
+
+public final  class Supplier extends Person implements ISupplier<Storage> {
     private Material material;
 
     public void setMaterial(Material material) {

@@ -1,4 +1,6 @@
-public class Blueprint {
+import Interfaces.IBlueprint;
+
+public final class Blueprint implements IBlueprint {
     private int widthOfBuilding;
     private int lengthOfBuilding;
     private int heightOfBuilding;
@@ -40,7 +42,6 @@ public class Blueprint {
     }
 
     public Blueprint(){
-
     }
 
 
@@ -50,9 +51,7 @@ public class Blueprint {
         this.heightOfBuilding = heightOfBuilding;
     }
 
-    public double Volume(){
-        return (this.widthOfBuilding*this.heightOfBuilding*this.lengthOfBuilding);
-    }
+
 
     @Override
     public String toString() {
@@ -61,4 +60,9 @@ public class Blueprint {
                 ", length of building =" + lengthOfBuilding +
                 ", height of building =" + heightOfBuilding;
                 }
+
+    @Override
+    public double Volume() {
+        return 0;
+    }
 }

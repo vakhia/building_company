@@ -1,4 +1,4 @@
-public class Contract {
+public final class Contract {
     private Contractor contractor;
     private Client client;
     private int width;

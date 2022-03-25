@@ -1,3 +1,4 @@
+
 import java.util.List;
 
 public class Building extends Area {
@@ -16,6 +17,10 @@ public class Building extends Area {
         return price;
     }
 
+    public Building(){
+
+    }
+
     public Building(int width, int length, int price, int height,String type) {
         super(width, length, price);
         this.height = height;
@@ -27,7 +32,7 @@ public class Building extends Area {
         return (this.width * this.length * this.height);
     }
 
-    public boolean Build(Building_Engineer building_engineer, List<Builder> builders, List<Material> materials, Foreman foreman, List<Crane> cranes, List<Dump_Trucks> dump_trucks) {
+    static public boolean Build(BuildingEngineer building_engineer, List<Builder> builders, List<Material> materials, Foreman foreman, List<Crane> cranes, List<DumpTrucks> dump_trucks) {
         if (building_engineer.CheckBlueprint()) {
             return true;
         } else {
@@ -44,4 +49,6 @@ public class Building extends Area {
                 ", height =" + height +
                 ", type='" + type + '\'';
     }
+
+
 }

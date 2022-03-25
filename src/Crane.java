@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Crane extends Machinery{
+public final class Crane extends Machinery{
     private int carrying_capacity;
 
     public int getCarrying_capacity() {
@@ -15,8 +15,7 @@ public class Crane extends Machinery{
         }
     }
 
-    public Crane(String title, int power, int fuel_capacity, Date date_of_creating){
-        super(title, power, fuel_capacity, date_of_creating);
+    public Crane(){
     }
 
     public Crane(String title, int power, int fuel_capacity, Date date_of_creating,int carrying_capacity) {

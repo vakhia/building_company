@@ -1,4 +1,6 @@
-abstract public class Area {
+import Interfaces.IArea;
+
+public abstract class Area implements IArea {
     protected int width;
     protected int length;
     protected int price;
@@ -38,7 +40,6 @@ abstract public class Area {
             throw new IllegalArgumentException("Price cannot be null!");
         }
     }
-
     public Area() {
 
     }
@@ -48,8 +49,6 @@ abstract public class Area {
         this.length = length;
         this.price = price;
     }
-
-
 
     @Override
     public String toString() {

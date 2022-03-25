@@ -1,4 +1,4 @@
-abstract public class Person {
+public abstract  class Person {
     private String first_name;
     private String last_name;
     private int age;

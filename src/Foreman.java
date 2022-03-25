@@ -1,4 +1,4 @@
-public class Foreman extends Employee{
+public final class Foreman extends Employee{
     private int numberOfTeam;
 
     public void setNumberOfTeam(int numberOfTeam) {
@@ -13,8 +13,7 @@ public class Foreman extends Employee{
         return numberOfTeam;
     }
 
-    public Foreman(String first_name, String last_name, int age, int salary) {
-        super(first_name, last_name, age, salary);
+    public Foreman() {
     }
 
     public Foreman(String first_name, String last_name, int age, int salary, int numberOfTeam) {
