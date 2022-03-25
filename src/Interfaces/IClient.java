@@ -1,5 +1,5 @@
 package Interfaces;
 
-public interface IClient extends IPerson{
-    void Pay();
+public interface IClient extends IPerson {
+    boolean Pay();
 }

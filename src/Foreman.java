@@ -1,4 +1,6 @@
-public final class Foreman extends Employee{
+import Interfaces.IForeman;
+
+public final class Foreman extends Employee implements IForeman {
     private int numberOfTeam;
 
     public void setNumberOfTeam(int numberOfTeam) {
@@ -25,5 +27,11 @@ public final class Foreman extends Employee{
     public String toString() {
         return "Foreman = " +
                 "numberOfTeam=" + numberOfTeam;
+    }
+
+
+    @Override
+    public String Hire() {
+        return "Foreman hired 100 workers";
     }
 }

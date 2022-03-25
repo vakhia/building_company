@@ -58,4 +58,9 @@ public abstract class Area implements IArea {
                 ", price=" + price;
     }
 
+    @Override
+    public int RateArea() {
+        return 100;
+    }
+
 }

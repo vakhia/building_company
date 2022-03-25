@@ -1,6 +1,6 @@
 import Interfaces.ISupplier;
 
-public final  class Supplier extends Person implements ISupplier<Storage> {
+public final class Supplier extends Person implements ISupplier {
     private Material material;
 
     public void setMaterial(Material material) {
@@ -28,5 +28,10 @@ public final  class Supplier extends Person implements ISupplier<Storage> {
     public String toString() {
         return "Supplier = " +
                 "material =" + material;
+    }
+
+    @Override
+    public void BuyMaterials(int money) {
+
     }
 }

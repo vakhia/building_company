@@ -1,4 +1,5 @@
 package Interfaces;
 
-public interface IStorage extends IBuilding{
+public interface IStorage extends IBuilding {
+    String SortMaterials();
 }

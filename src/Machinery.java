@@ -1,8 +1,8 @@
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import Interfaces.IMachinery;
+
 import java.util.Date;
 
-public abstract class Machinery {
+public abstract class Machinery implements IMachinery {
     private String title;
     private int power;
     private int fuel_capacity;
@@ -74,5 +74,10 @@ public abstract class Machinery {
                 ", power =" + power +
                 ", fuel_capacity =" + fuel_capacity +
                 ", date_of_creating =" + date_of_creating;
+    }
+
+    @Override
+    public String Ride() {
+        return "Riding...";
     }
 }

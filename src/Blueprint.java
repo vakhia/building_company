@@ -63,6 +63,6 @@ public final class Blueprint implements IBlueprint {
 
     @Override
     public double Volume() {
-        return 0;
+        return this.heightOfBuilding * this.widthOfBuilding * this.lengthOfBuilding;
     }
 }

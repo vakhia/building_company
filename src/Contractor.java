@@ -1,4 +1,6 @@
-public final class Contractor extends Employee {
+import Interfaces.IContractor;
+
+public final class Contractor extends Employee implements IContractor {
     private boolean seal_stamp;
 
     public void setSeal_stamp(boolean seal_stamp) {
@@ -21,5 +23,10 @@ public final class Contractor extends Employee {
     public String toString() {
         return "Contractor = " +
                 "seal_stamp=" + seal_stamp;
+    }
+
+    @Override
+    public boolean Sign() {
+        return true;
     }
 }

@@ -29,7 +29,8 @@ public class Employee extends Person implements IEmployee {
                 "salary=" + salary;
     }
 
-    public void Work() {
-        //:TODO Realise Work method;
+    @Override
+    public String Work() {
+        return "Working...";
     }
 }

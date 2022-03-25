@@ -1,4 +1,6 @@
-public final class Contract {
+import Interfaces.IContract;
+
+public final class Contract implements IContract {
     private Contractor contractor;
     private Client client;
     private int width;

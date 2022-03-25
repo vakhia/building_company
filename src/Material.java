@@ -1,4 +1,6 @@
-public final class Material {
+import Interfaces.IMaterial;
+
+public final class Material implements IMaterial {
     protected int quantity;
     protected int pricePerEach;
     protected String type;
@@ -42,5 +44,10 @@ public final class Material {
                 "quantity =" + quantity +
                 ", pricePerEach =" + pricePerEach +
                 ", type ='" + type;
+    }
+
+    @Override
+    public int TotalPrice() {
+        return this.quantity * this.pricePerEach;
     }
 }

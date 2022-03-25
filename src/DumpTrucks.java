@@ -1,6 +1,9 @@
+import Interfaces.IDumpTrucks;
+
 import java.util.Date;
 import java.util.List;
-public final class DumpTrucks extends Machinery{
+
+public final class DumpTrucks extends Machinery implements IDumpTrucks {
     private List<Material> materials;
 
     public List<Material> getMaterials() {
@@ -11,7 +14,7 @@ public final class DumpTrucks extends Machinery{
         this.materials.add(material);
     }
 
-    public DumpTrucks(){
+    public DumpTrucks() {
     }
 
     public DumpTrucks(String title, int power, int fuel_capacity, Date date_of_creating, Material material) {
@@ -21,7 +24,11 @@ public final class DumpTrucks extends Machinery{
 
     @Override
     public String toString() {
-        return "Dump_Trucks =" +
-                "materials=" + materials;
+        return "Dump_Trucks =" + "materials=" + materials;
+    }
+
+    @Override
+    public String Transport() {
+        return "Transporting materials...";
     }
 }

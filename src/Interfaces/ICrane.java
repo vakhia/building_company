@@ -1,4 +1,5 @@
 package Interfaces;
 
-public interface ICrane extends IMachinery{
+public interface ICrane extends IMachinery {
+    String Lift();
 }

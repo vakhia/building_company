@@ -31,7 +31,7 @@ public final class Client extends Person implements IClient {
     }
 
     @Override
-    public void Pay() {
-
+    public boolean Pay() {
+        return true;
     }
 }

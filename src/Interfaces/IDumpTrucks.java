@@ -1,4 +1,5 @@
 package Interfaces;
 
-public interface IDumpTrucks extends IMachinery{
+public interface IDumpTrucks extends IMachinery {
+    String Transport();
 }

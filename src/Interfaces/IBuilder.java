@@ -1,5 +1,5 @@
 package Interfaces;
 
-public interface IBuilder extends IEmployee{
-
+public interface IBuilder extends IEmployee {
+    String Build();
 }

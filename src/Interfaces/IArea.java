@@ -1,5 +1,5 @@
 package Interfaces;
 
 public interface IArea {
-    void RateArea();
+    int RateArea();
 }

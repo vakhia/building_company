@@ -1,5 +1,5 @@
 package Interfaces;
 
-public interface IBuilding extends IArea{
+public interface IBuilding extends IArea {
 
 }

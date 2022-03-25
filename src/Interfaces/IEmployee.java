@@ -1,5 +1,5 @@
 package Interfaces;
 
-public interface IEmployee extends IPerson{
-    void Work();
+public interface IEmployee extends IPerson {
+    String Work();
 }

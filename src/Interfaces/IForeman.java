@@ -1,4 +1,5 @@
 package Interfaces;
 
-public interface IForeman extends IEmployee{
+public interface IForeman extends IEmployee {
+    String Hire();
 }

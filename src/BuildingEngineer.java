@@ -22,19 +22,16 @@ public final class BuildingEngineer extends Employee implements IBuildingEnginee
         this.building = building;
     }
 
-    public boolean CheckBlueprint() {
-        if (blueprint.Volume() == building.Volume()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     @Override
     public String toString() {
         return "Building_Engineer =" +
                 "blueprint =" + blueprint +
                 ", building =" + building +
                 '}';
+    }
+
+    @Override
+    public boolean CheckBlueprint() {
+        return blueprint.Volume() == building.Volume();
     }
 }
