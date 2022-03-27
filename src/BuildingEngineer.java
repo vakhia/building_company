@@ -4,22 +4,23 @@ public final class BuildingEngineer extends Employee implements IBuildingEnginee
     private Blueprint blueprint;
     private Building building;
 
+
+    public BuildingEngineer() {
+
+    }
+
+    public BuildingEngineer(String firstName, String lastName, int age, int price, Blueprint blueprint, Building building) {
+        super(firstName, lastName, age, price);
+        this.blueprint = blueprint;
+        this.building = building;
+    }
+
     public Blueprint getBlueprint() {
         return blueprint;
     }
 
     public Building getBuilding() {
         return building;
-    }
-
-    public BuildingEngineer() {
-
-    }
-
-    public BuildingEngineer(String first_name, String last_name, int age, int price, Blueprint blueprint, Building building) {
-        super(first_name, last_name, age, price);
-        this.blueprint = blueprint;
-        this.building = building;
     }
 
     @Override

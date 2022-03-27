@@ -5,16 +5,18 @@ public final class Blueprint implements IBlueprint {
     private int lengthOfBuilding;
     private int heightOfBuilding;
 
+    public Blueprint() {
+
+    }
+
+    public Blueprint(int widthOfBuilding, int lengthOfBuilding, int heightOfBuilding) {
+        this.widthOfBuilding = widthOfBuilding;
+        this.lengthOfBuilding = lengthOfBuilding;
+        this.heightOfBuilding = heightOfBuilding;
+    }
+
     public int getWidthOfBuilding() {
         return widthOfBuilding;
-    }
-
-    public int getLengthOfBuilding() {
-        return lengthOfBuilding;
-    }
-
-    public int getHeightOfBuilding() {
-        return heightOfBuilding;
     }
 
     public void setWidthOfBuilding(int widthOfBuilding) {
@@ -25,12 +27,20 @@ public final class Blueprint implements IBlueprint {
         }
     }
 
+    public int getLengthOfBuilding() {
+        return lengthOfBuilding;
+    }
+
     public void setLengthOfBuilding(int lengthOfBuilding) {
         if (lengthOfBuilding > 0) {
             this.lengthOfBuilding = lengthOfBuilding;
         } else {
             throw new IllegalArgumentException("Length cannot be null!");
         }
+    }
+
+    public int getHeightOfBuilding() {
+        return heightOfBuilding;
     }
 
     public void setHeightOfBuilding(int heightOfBuilding) {
@@ -41,25 +51,13 @@ public final class Blueprint implements IBlueprint {
         }
     }
 
-    public Blueprint(){
-    }
-
-
-    public Blueprint(int widthOfBuilding, int lengthOfBuilding, int heightOfBuilding) {
-        this.widthOfBuilding = widthOfBuilding;
-        this.lengthOfBuilding = lengthOfBuilding;
-        this.heightOfBuilding = heightOfBuilding;
-    }
-
-
-
     @Override
     public String toString() {
         return "Blueprint = " +
                 "width of building =" + widthOfBuilding +
                 ", length of building =" + lengthOfBuilding +
                 ", height of building =" + heightOfBuilding;
-                }
+    }
 
     @Override
     public double Volume() {

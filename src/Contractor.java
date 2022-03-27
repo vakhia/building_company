@@ -1,28 +1,28 @@
 import Interfaces.IContractor;
 
 public final class Contractor extends Employee implements IContractor {
-    private boolean seal_stamp;
-
-    public void setSeal_stamp(boolean seal_stamp) {
-        this.seal_stamp = seal_stamp;
-    }
-
-    public boolean isSeal_stamp() {
-        return seal_stamp;
-    }
+    private boolean sealStamp;
 
     public Contractor() {
     }
 
-    public Contractor(String first_name, String last_name, int age, int price, boolean seal_stamp) {
-        super(first_name, last_name, age, price);
-        this.seal_stamp = seal_stamp;
+    public Contractor(String firstName, String lastName, int age, int price, boolean sealStamp) {
+        super(firstName, lastName, age, price);
+        this.sealStamp = sealStamp;
+    }
+
+    public boolean isSealStamp() {
+        return sealStamp;
+    }
+
+    public void setSealStamp(boolean sealStamp) {
+        this.sealStamp = sealStamp;
     }
 
     @Override
     public String toString() {
         return "Contractor = " +
-                "seal_stamp=" + seal_stamp;
+                "sealStamp=" + sealStamp;
     }
 
     @Override

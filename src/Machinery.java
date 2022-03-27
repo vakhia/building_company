@@ -5,25 +5,22 @@ import java.util.Date;
 public abstract class Machinery implements IMachinery {
     private String title;
     private int power;
-    private int fuel_capacity;
-    private Date date_of_creating;
+    private int fuelCapacity;
+    private Date dateOfCreating;
+
+    public Machinery() {
+    }
+
+    public Machinery(String title, int power, int fuelCapacity, Date dateOfCreating) {
+        this.title = title;
+        this.power = power;
+        this.fuelCapacity = fuelCapacity;
+        this.dateOfCreating = dateOfCreating;
+    }
 
     public String getTitle() {
         return title;
     }
-
-    public int getPower() {
-        return power;
-    }
-
-    public int getFuel_capacity() {
-        return fuel_capacity;
-    }
-
-    public Date getDate_of_creating() {
-        return date_of_creating;
-    }
-
 
     public void setTitle(String title) {
         if (title.length() > 0) {
@@ -31,6 +28,10 @@ public abstract class Machinery implements IMachinery {
         } else {
             throw new IllegalArgumentException("Title cannot be null!");
         }
+    }
+
+    public int getPower() {
+        return power;
     }
 
     public void setPower(int power) {
@@ -41,30 +42,28 @@ public abstract class Machinery implements IMachinery {
         }
     }
 
-    public void setFuel_capacity(int fuel_capacity) {
-        if (fuel_capacity > 0) {
-            this.fuel_capacity = fuel_capacity;
+    public int getFuelCapacity() {
+        return fuelCapacity;
+    }
+
+    public void setFuelCapacity(int fuelCapacity) {
+        if (fuelCapacity > 0) {
+            this.fuelCapacity = fuelCapacity;
         } else {
             throw new IllegalArgumentException("Fuel capacity cannot be null!");
         }
     }
 
-    public void setDate_of_creating(Date date_of_creating) {
-        if (date_of_creating != null) {
-            this.date_of_creating = date_of_creating;
+    public Date getDateOfCreating() {
+        return dateOfCreating;
+    }
+
+    public void setDateOfCreating(Date dateOfCreating) {
+        if (dateOfCreating != null) {
+            this.dateOfCreating = dateOfCreating;
         } else {
             throw new IllegalArgumentException("Date of creation cannot be null!");
         }
-    }
-
-    public Machinery(){
-    }
-
-    public Machinery(String title, int power, int fuel_capacity, Date date_of_creating) {
-        this.title = title;
-        this.power = power;
-        this.fuel_capacity = fuel_capacity;
-        this.date_of_creating = date_of_creating;
     }
 
     @Override
@@ -72,8 +71,8 @@ public abstract class Machinery implements IMachinery {
         return "Machinery = " +
                 "title ='" + title + '\'' +
                 ", power =" + power +
-                ", fuel_capacity =" + fuel_capacity +
-                ", date_of_creating =" + date_of_creating;
+                ", fuelCapacity =" + fuelCapacity +
+                ", dateOfCreating =" + dateOfCreating;
     }
 
     @Override

@@ -5,16 +5,16 @@ import java.util.Date;
 public final class Crane extends Machinery implements ICrane {
     private int carrying_capacity;
 
-    public int getCarrying_capacity() {
-        return carrying_capacity;
-    }
-
-    public Crane(String title, int power, int fuel_capacity, Date date_of_creating, int carrying_capacity) {
-        super(title, power, fuel_capacity, date_of_creating);
+    public Crane(String title, int power, int fuel_capacity, Date dateOfCreating, int carrying_capacity) {
+        super(title, power, fuel_capacity, dateOfCreating);
         this.carrying_capacity = carrying_capacity;
     }
 
     public Crane() {
+    }
+
+    public int getCarrying_capacity() {
+        return carrying_capacity;
     }
 
     public void setCarrying_capacity(int carrying_capacity) {
