@@ -1,3 +1,4 @@
+import Interfaces.IBuilder;
 import Interfaces.IClient;
 
 public final class Client extends Person implements IClient {
@@ -33,6 +34,11 @@ public final class Client extends Person implements IClient {
 
     @Override
     public boolean Pay() {
+        return true;
+    }
+
+    @Override
+    public boolean Evaluate() {
         return true;
     }
 }

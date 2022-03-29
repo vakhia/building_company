@@ -1,5 +1,7 @@
 import Interfaces.IBuilder;
 
+import java.sql.Date;
+
 public final class Builder extends Employee implements IBuilder {
     private int workExperience;
 
@@ -37,5 +39,20 @@ public final class Builder extends Employee implements IBuilder {
     @Override
     public String Build() {
         return "Building...";
+    }
+
+    @Override
+    public String Rest(Date date) {
+        return "Resting for" + date;
+    }
+
+    @Override
+    public String Сarry(String position, String materials) {
+        return "Carriyng " + materials + " to" + position;
+    }
+
+    @Override
+    public int ReceiveSalary() {
+        return this.getSalary();
     }
 }
