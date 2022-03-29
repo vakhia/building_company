@@ -1,3 +1,5 @@
+import Exceptions.InvalidDataException;
+import Exceptions.InvalidNumberException;
 import Interfaces.IContract;
 
 public final class Contract implements IContract {
@@ -24,11 +26,11 @@ public final class Contract implements IContract {
         return contractor;
     }
 
-    public void setContractor(Contractor contractor) {
+    public void setContractor(Contractor contractor) throws InvalidDataException {
         if (contractor.isSealStamp()) {
             this.contractor = contractor;
         } else {
-            throw new NullPointerException("Contractor doesn't have a seal stamp to sign this contract");
+            throw new InvalidDataException("Contractor doesn't have a seal stamp to sign this contract");
         }
     }
 
@@ -36,11 +38,11 @@ public final class Contract implements IContract {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(Client client) throws InvalidNumberException {
         if (client.getMoneyForBuilding() > 0) {
             this.client = client;
         } else {
-            throw new IllegalArgumentException("Client doesn't have money");
+            throw new InvalidNumberException("Client doesn't have money");
         }
     }
 

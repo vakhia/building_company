@@ -1,3 +1,5 @@
+import Exceptions.InvalidDataException;
+import Exceptions.InvalidNumberException;
 import Interfaces.ICrane;
 
 import java.util.Date;
@@ -17,11 +19,11 @@ public final class Crane extends Machinery implements ICrane {
         return carrying_capacity;
     }
 
-    public void setCarrying_capacity(int carrying_capacity) {
+    public void setCarrying_capacity(int carrying_capacity) throws InvalidNumberException {
         if (carrying_capacity > 0) {
             this.carrying_capacity = carrying_capacity;
         } else {
-            throw new IllegalArgumentException("Carrying capacity cannot be null!");
+            throw new InvalidNumberException("Carrying capacity cannot be null!");
         }
     }
 

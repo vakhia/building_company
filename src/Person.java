@@ -1,3 +1,5 @@
+import Exceptions.InvalidDataException;
+
 public abstract class Person {
     private String firstName;
     private String lastName;
@@ -17,11 +19,11 @@ public abstract class Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) throws InvalidDataException {
         if (firstName.length() > 0) {
             this.firstName = firstName;
         } else {
-            throw new NullPointerException("First name cannot be null");
+            throw new InvalidDataException("First name cannot be null");
         }
     }
 
@@ -29,11 +31,11 @@ public abstract class Person {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) throws InvalidDataException {
         if (lastName.length() > 0) {
             this.lastName = lastName;
         } else {
-            throw new NullPointerException("Last name cannot be null");
+            throw new InvalidDataException("Last name cannot be null");
         }
     }
 
@@ -41,11 +43,11 @@ public abstract class Person {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws InvalidDataException {
         if (age > 0) {
             this.age = age;
         } else {
-            throw new IllegalArgumentException("Age cannot be null!");
+            throw new InvalidDataException("Age cannot be null!");
         }
     }
 

@@ -1,3 +1,5 @@
+import Exceptions.InvalidDataException;
+import Exceptions.InvalidNumberException;
 import Interfaces.IMachinery;
 
 import java.util.Date;
@@ -22,11 +24,11 @@ public abstract class Machinery implements IMachinery {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title) throws InvalidDataException {
         if (title.length() > 0) {
             this.title = title;
         } else {
-            throw new IllegalArgumentException("Title cannot be null!");
+            throw new InvalidDataException("Title cannot be null!");
         }
     }
 
@@ -34,11 +36,11 @@ public abstract class Machinery implements IMachinery {
         return power;
     }
 
-    public void setPower(int power) {
+    public void setPower(int power) throws InvalidNumberException {
         if (power > 0) {
             this.power = power;
         } else {
-            throw new IllegalArgumentException("Power cannot be nulL!");
+            throw new InvalidNumberException("Power cannot be nulL!");
         }
     }
 

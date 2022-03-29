@@ -1,3 +1,4 @@
+import Exceptions.InvalidNumberException;
 import Interfaces.IBuilder;
 import Interfaces.IClient;
 
@@ -18,11 +19,11 @@ public final class Client extends Person implements IClient {
         return moneyForBuilding;
     }
 
-    public void setMoneyForBuilding(int moneyForBuilding) {
+    public void setMoneyForBuilding(int moneyForBuilding) throws InvalidNumberException {
         if (moneyForBuilding > 0) {
             this.moneyForBuilding = moneyForBuilding;
         } else {
-            throw new IllegalArgumentException("Money cannot be null!");
+            throw new InvalidNumberException("Money cannot be null!");
         }
     }
 
@@ -37,8 +38,7 @@ public final class Client extends Person implements IClient {
         return true;
     }
 
-    @Override
-    public boolean Evaluate() {
+    public static boolean Evaluate() {
         return true;
     }
 }

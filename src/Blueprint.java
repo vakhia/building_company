@@ -1,3 +1,5 @@
+import Exceptions.InvalidDataException;
+import Exceptions.InvalidNumberException;
 import Interfaces.IBlueprint;
 
 public final class Blueprint implements IBlueprint {
@@ -19,11 +21,11 @@ public final class Blueprint implements IBlueprint {
         return widthOfBuilding;
     }
 
-    public void setWidthOfBuilding(int widthOfBuilding) {
+    public void setWidthOfBuilding(int widthOfBuilding) throws InvalidNumberException {
         if (widthOfBuilding > 0) {
             this.widthOfBuilding = widthOfBuilding;
         } else {
-            throw new IllegalArgumentException("Width cannot be null!");
+            throw new InvalidNumberException("Width cannot be null!");
         }
     }
 
@@ -31,11 +33,11 @@ public final class Blueprint implements IBlueprint {
         return lengthOfBuilding;
     }
 
-    public void setLengthOfBuilding(int lengthOfBuilding) {
+    public void setLengthOfBuilding(int lengthOfBuilding) throws InvalidNumberException {
         if (lengthOfBuilding > 0) {
             this.lengthOfBuilding = lengthOfBuilding;
         } else {
-            throw new IllegalArgumentException("Length cannot be null!");
+            throw new InvalidNumberException("Length cannot be null!");
         }
     }
 
@@ -43,11 +45,11 @@ public final class Blueprint implements IBlueprint {
         return heightOfBuilding;
     }
 
-    public void setHeightOfBuilding(int heightOfBuilding) {
+    public void setHeightOfBuilding(int heightOfBuilding) throws InvalidNumberException {
         if (heightOfBuilding > 0) {
             this.heightOfBuilding = heightOfBuilding;
         } else {
-            throw new IllegalArgumentException("Height cannot be null!");
+            throw new InvalidNumberException("Height cannot be null!");
         }
     }
 

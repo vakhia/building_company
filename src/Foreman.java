@@ -1,3 +1,4 @@
+import Exceptions.InvalidNumberException;
 import Interfaces.IForeman;
 
 public final class Foreman extends Employee implements IForeman {
@@ -15,11 +16,11 @@ public final class Foreman extends Employee implements IForeman {
         return numberOfTeam;
     }
 
-    public void setNumberOfTeam(int numberOfTeam) {
+    public void setNumberOfTeam(int numberOfTeam) throws InvalidNumberException {
         if (numberOfTeam > 0) {
             this.numberOfTeam = numberOfTeam;
         } else {
-            throw new IllegalArgumentException("Number of team cannot be null!");
+            throw new InvalidNumberException("Number of team cannot be null!");
         }
     }
 

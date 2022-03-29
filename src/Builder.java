@@ -1,3 +1,4 @@
+import Exceptions.InvalidNumberException;
 import Interfaces.IBuilder;
 
 import java.sql.Date;
@@ -18,11 +19,11 @@ public final class Builder extends Employee implements IBuilder {
         return workExperience;
     }
 
-    public void setWorkExperience(int workExperience) {
+    public void setWorkExperience(int workExperience) throws InvalidNumberException {
         if (workExperience > (-1)) {
             this.workExperience = workExperience;
         } else {
-            throw new IllegalArgumentException("Work experience cannot be null!");
+            throw new InvalidNumberException("Work experience cannot be null!");
         }
     }
 
@@ -36,8 +37,7 @@ public final class Builder extends Employee implements IBuilder {
                 "workExperience=" + workExperience;
     }
 
-    @Override
-    public String Build() {
+    public static String Build() {
         return "Building...";
     }
 
@@ -55,4 +55,5 @@ public final class Builder extends Employee implements IBuilder {
     public int ReceiveSalary() {
         return this.getSalary();
     }
+
 }

@@ -1,3 +1,4 @@
+import Exceptions.InvalidNumberException;
 import Interfaces.IEmployee;
 
 public class Employee extends Person implements IEmployee {
@@ -15,11 +16,11 @@ public class Employee extends Person implements IEmployee {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(int salary) throws InvalidNumberException {
         if (salary > 0) {
             this.salary = salary;
         } else {
-            throw new IllegalArgumentException("Salary cannot be null!");
+            throw new InvalidNumberException("Salary cannot be null!");
         }
     }
 

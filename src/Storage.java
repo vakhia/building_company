@@ -1,3 +1,4 @@
+import Exceptions.InvalidDataException;
 import Interfaces.IStorage;
 
 import java.util.List;
@@ -21,11 +22,11 @@ public final class Storage extends Building implements IStorage {
         Materials = materials;
     }
 
-    public void setMaterials(Material material) {
+    public void setMaterials(Material material) throws InvalidDataException {
         if (Volume() > material.quantity) {
             this.Materials.add(material);
         } else {
-            throw new IllegalArgumentException("Too many materials to fit this storage");
+            throw new InvalidDataException("Too many materials to fit this storage");
         }
     }
 
