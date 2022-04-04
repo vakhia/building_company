@@ -1,8 +1,11 @@
 import Exceptions.InvalidNumberException;
 import Interfaces.IBuilder;
 import Interfaces.IClient;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public final class Client extends Person implements IClient {
+    private static final Logger logger = LogManager.getLogger(Client.class);
     private int moneyForBuilding;
 
 
@@ -29,6 +32,7 @@ public final class Client extends Person implements IClient {
 
     @Override
     public String toString() {
+        logger.info("Client = money :"+moneyForBuilding);
         return "Client = " +
                 "moneyForBuilding=" + moneyForBuilding;
     }

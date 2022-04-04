@@ -1,6 +1,9 @@
 import Interfaces.IBuildingEngineer;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public final class BuildingEngineer extends Employee implements IBuildingEngineer {
+    private static final Logger logger = LogManager.getLogger(BuildingEngineer.class);
     private Blueprint blueprint;
     private Building building;
 
@@ -25,6 +28,7 @@ public final class BuildingEngineer extends Employee implements IBuildingEnginee
 
     @Override
     public String toString() {
+        logger.info("building_engineer = blueprint:"+blueprint+", building"+building);
         return "Building_Engineer =" +
                 "blueprint =" + blueprint +
                 ", building =" + building +

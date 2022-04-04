@@ -1,7 +1,10 @@
 import Exceptions.InvalidNumberException;
 import Interfaces.IEmployee;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class Employee extends Person implements IEmployee {
+    private static final Logger logger = LogManager.getLogger(Employee.class);
     private int salary;
 
     public Employee() {
@@ -26,12 +29,14 @@ public class Employee extends Person implements IEmployee {
 
     @Override
     public String toString() {
+        logger.info("Employee = salary"+salary);
         return "Employee = " +
                 "salary=" + salary;
     }
 
     @Override
     public String Work() {
+        logger.info("Working...");
         return "Working...";
     }
 }

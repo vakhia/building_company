@@ -1,8 +1,11 @@
 import Exceptions.InvalidDataException;
 import Exceptions.InvalidNumberException;
 import Interfaces.IContract;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public final class Contract implements IContract {
+    private static final Logger logger = LogManager.getLogger(Contract.class);
     private Contractor contractor;
     private Client client;
     private int width;
@@ -84,6 +87,12 @@ public final class Contract implements IContract {
 
     @Override
     public String toString() {
+        logger.info("Contract =" +
+                "contractor =" + contractor +
+                ", client =" + client +
+                ", width =" + width +
+                ", height =" + height +
+                ", length =" + length);
         return "Contract =" +
                 "contractor =" + contractor +
                 ", client =" + client +

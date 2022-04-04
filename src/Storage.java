@@ -1,9 +1,12 @@
 import Exceptions.InvalidDataException;
 import Interfaces.IStorage;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public final class Storage extends Building implements IStorage {
+    private static final Logger logger = LogManager.getLogger(Storage.class);
     private List<Material> Materials;
 
     public Storage() {
@@ -32,6 +35,7 @@ public final class Storage extends Building implements IStorage {
 
     @Override
     public String SortMaterials() {
+        logger.info("Materials were sorted!");
         return "Materials were sorted!";
     }
 }

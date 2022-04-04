@@ -1,6 +1,9 @@
 import Interfaces.IArea;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public abstract class Area implements IArea {
+    private static final Logger logger = LogManager.getLogger(Area.class);
     protected int width;
     protected int length;
     protected int price;
@@ -53,6 +56,7 @@ public abstract class Area implements IArea {
 
     @Override
     public String toString() {
+        logger.info("Area" + width + "width" + width + "length" + length+"price"+price);
         return "Area = " +
                 "width=" + width +
                 ", length=" + length +

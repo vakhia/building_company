@@ -1,6 +1,9 @@
 import Interfaces.IContractor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public final class Contractor extends Employee implements IContractor {
+    private static final Logger logger = LogManager.getLogger(Contractor.class);
     private boolean sealStamp;
 
     public Contractor() {
@@ -21,6 +24,7 @@ public final class Contractor extends Employee implements IContractor {
 
     @Override
     public String toString() {
+        logger.info("Contractor = sealStamp"+sealStamp);
         return "Contractor = " +
                 "sealStamp=" + sealStamp;
     }

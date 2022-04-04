@@ -1,7 +1,10 @@
 import Exceptions.InvalidDataException;
 import Interfaces.ISupplier;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public final class Supplier extends Person implements ISupplier {
+    private static final Logger logger = LogManager.getLogger(Supplier.class);
     private Material material;
 
     public Supplier() {
@@ -27,13 +30,15 @@ public final class Supplier extends Person implements ISupplier {
 
     @Override
     public String toString() {
+        logger.info("Supplier = material " + material);
         return "Supplier = " +
                 "material =" + material;
     }
 
     @Override
-    public void BuyMaterials(int money) {
-
+    public String BuyMaterials(int money) {
+        logger.info("Money for materials" + money);
+        return "Money for materials" + money;
     }
 
     @Override

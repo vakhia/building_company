@@ -1,7 +1,10 @@
 import Exceptions.InvalidNumberException;
 import Interfaces.IForeman;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public final class Foreman extends Employee implements IForeman {
+    private static final Logger logger = LogManager.getLogger(Foreman.class);
     private int numberOfTeam;
 
     public Foreman() {
@@ -26,6 +29,7 @@ public final class Foreman extends Employee implements IForeman {
 
     @Override
     public String toString() {
+        logger.info("Foreman = numberOfTeam"+numberOfTeam);
         return "Foreman = " +
                 "numberOfTeam=" + numberOfTeam;
     }
@@ -33,6 +37,7 @@ public final class Foreman extends Employee implements IForeman {
 
     @Override
     public String Hire() {
+        logger.info("Foreman hired 100 workers");
         return "Foreman hired 100 workers";
     }
 }

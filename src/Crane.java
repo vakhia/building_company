@@ -1,10 +1,13 @@
 import Exceptions.InvalidDataException;
 import Exceptions.InvalidNumberException;
 import Interfaces.ICrane;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.Date;
 
 public final class Crane extends Machinery implements ICrane {
+    private static final Logger logger = LogManager.getLogger(Crane.class);
     private int carrying_capacity;
 
     public Crane(String title, int power, int fuel_capacity, Date dateOfCreating, int carrying_capacity) {

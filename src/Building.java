@@ -1,8 +1,11 @@
 import Interfaces.IBuilding;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public class Building extends Area implements IBuilding {
+    private static final Logger logger = LogManager.getLogger(Builder.class);
     protected int height;
     private String type;
 
@@ -38,6 +41,13 @@ public class Building extends Area implements IBuilding {
 
     @Override
     public String toString() {
+        logger.info("Building = " +
+                "width =" + width +
+                ", length =" + length +
+                ", price =" + price +
+                ", height =" + height +
+                ", type='" + type + '\'');
+
         return "Building = " +
                 "width =" + width +
                 ", length =" + length +

@@ -1,10 +1,13 @@
 import Exceptions.InvalidDataException;
 import Exceptions.InvalidNumberException;
 import Interfaces.IMachinery;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.Date;
 
 public abstract class Machinery implements IMachinery {
+    private static final Logger logger = LogManager.getLogger(Machinery.class);
     private String title;
     private int power;
     private int fuelCapacity;
@@ -70,6 +73,11 @@ public abstract class Machinery implements IMachinery {
 
     @Override
     public String toString() {
+        logger.info("Machinery = " +
+                "title ='" + title + '\'' +
+                ", power =" + power +
+                ", fuelCapacity =" + fuelCapacity +
+                ", dateOfCreating =" + dateOfCreating);
         return "Machinery = " +
                 "title ='" + title + '\'' +
                 ", power =" + power +
@@ -79,6 +87,7 @@ public abstract class Machinery implements IMachinery {
 
     @Override
     public String Ride() {
+        logger.info("Riding...");
         return "Riding...";
     }
 }

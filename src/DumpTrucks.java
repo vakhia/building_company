@@ -1,9 +1,12 @@
 import Interfaces.IDumpTrucks;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.Date;
 import java.util.List;
 
 public final class DumpTrucks extends Machinery implements IDumpTrucks {
+    private static final Logger logger = LogManager.getLogger(DumpTrucks.class);
     private List<Material> materials;
 
     public DumpTrucks() {
@@ -24,11 +27,13 @@ public final class DumpTrucks extends Machinery implements IDumpTrucks {
 
     @Override
     public String toString() {
+        logger.info("DumpTrucks = materials" + materials);
         return "Dump_Trucks =" + "materials=" + materials;
     }
 
     @Override
     public String Transport() {
+        logger.info("transporting material");
         return "Transporting materials...";
     }
 }

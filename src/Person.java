@@ -1,6 +1,9 @@
 import Exceptions.InvalidDataException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public abstract class Person {
+    private static final Logger logger = LogManager.getLogger(Person.class);
     private String firstName;
     private String lastName;
     private int age;
@@ -53,6 +56,10 @@ public abstract class Person {
 
     @Override
     public String toString() {
+        logger.info("Person =" +
+                "firstName ='" + firstName + '\'' +
+                ", lastName ='" + lastName + '\'' +
+                ", age =" + age);
         return "Person =" +
                 "firstName ='" + firstName + '\'' +
                 ", lastName ='" + lastName + '\'' +

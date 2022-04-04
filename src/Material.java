@@ -1,6 +1,9 @@
 import Interfaces.IMaterial;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public final class Material implements IMaterial {
+    private static final Logger logger = LogManager.getLogger(Material.class);
     protected int quantity;
     protected int pricePerEach;
     protected String type;
@@ -40,6 +43,10 @@ public final class Material implements IMaterial {
 
     @Override
     public String toString() {
+        logger.info("Material = " +
+                "quantity =" + quantity +
+                ", pricePerEach =" + pricePerEach +
+                ", type ='" + type);
         return "Material = " +
                 "quantity =" + quantity +
                 ", pricePerEach =" + pricePerEach +

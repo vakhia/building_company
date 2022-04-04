@@ -1,8 +1,13 @@
 import Exceptions.InvalidDataException;
 import Exceptions.InvalidNumberException;
 import Interfaces.IBlueprint;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+import javax.swing.text.html.HTMLDocument;
 
 public final class Blueprint implements IBlueprint {
+    private static final Logger logger = LogManager.getLogger(Blueprint.class);
     private int widthOfBuilding;
     private int lengthOfBuilding;
     private int heightOfBuilding;
@@ -55,6 +60,7 @@ public final class Blueprint implements IBlueprint {
 
     @Override
     public String toString() {
+        logger.info("blueprint = "+"width "+widthOfBuilding+" length "+lengthOfBuilding+" height "+heightOfBuilding);
         return "Blueprint = " +
                 "width of building =" + widthOfBuilding +
                 ", length of building =" + lengthOfBuilding +
